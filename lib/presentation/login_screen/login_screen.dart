@@ -4,15 +4,41 @@ import 'package:hiw/core/app_export.dart';
 import 'package:hiw/widgets/app_bar/appbar_image.dart';
 import 'package:hiw/widgets/app_bar/custom_app_bar.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:hiw/firebase_options.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+DatabaseReference ref = FirebaseDatabase.instance.ref();
+
 class LoginScreen extends StatefulWidget {
   @override
   State<LoginScreen> createState() => _nameState();
 }
 
 class _nameState extends State<LoginScreen> {
+  TextEditingController c1 = new TextEditingController();
+  TextEditingController c2 = new TextEditingController();
+
+  Createuser() async {
+    try {
+      var user = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: c1.text, password: c2.text);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "weak-password") {
+        Fluttertoast.showToast(msg: "password is weak");
+      } else if (e.code == "email-already-in-use") {
+        Fluttertoast.showToast(msg: "email already exists");
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+        top: false,
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: ColorConstant.blueA700,
@@ -112,6 +138,7 @@ class _nameState extends State<LoginScreen> {
                                                 height: getVerticalSize(60),
                                                 width: getHorizontalSize(359),
                                                 child: TextField(
+                                                  controller: c1,
                                                   textAlign: TextAlign.left,
                                                   textAlignVertical:
                                                       TextAlignVertical.top,
@@ -146,6 +173,7 @@ class _nameState extends State<LoginScreen> {
                                                 height: getVerticalSize(60),
                                                 width: getHorizontalSize(359),
                                                 child: TextField(
+                                                  controller: c2,
                                                   textAlign: TextAlign.left,
                                                   textAlignVertical:
                                                       TextAlignVertical.top,
@@ -192,8 +220,9 @@ class _nameState extends State<LoginScreen> {
                                                               BorderRadiusStyle
                                                                   .txtRoundedBorder17),
                                                   child: InkWell(
-                                                      onTap:
-                                                          () {}, // Handle your callback
+                                                      onTap: () {
+                                                        onTapImgHome();
+                                                      }, // Handle your callback
                                                       child: Text(
                                                         "lbl_sign_up".tr,
                                                         overflow: TextOverflow
@@ -212,5 +241,9 @@ class _nameState extends State<LoginScreen> {
 
   onTapArrowleft() {
     Get.back();
+  }
+
+  onTapImgHome() {
+    Get.toNamed(AppRoutes.homeScreen);
   }
 }

@@ -58,10 +58,10 @@ class _nameState extends State<WalkthroughOneScreen> {
                                 CustomImageView(
                                   imagePath: ImageConstant.imgImage1,
                                   height: getVerticalSize(
-                                    364,
+                                    350,
                                   ),
                                   width: getHorizontalSize(
-                                    368,
+                                    350,
                                   ),
                                   alignment: Alignment.centerLeft,
                                 ),

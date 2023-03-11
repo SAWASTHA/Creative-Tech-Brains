@@ -43,4 +43,19 @@ class ImageConstant {
   static String imgLock = 'assets/images/img_lock.svg';
 
   static String imgMaill = 'assets/images/img_maill.svg';
+
+  static String imgUser = 'assets/images/img_user.svg';
+
+  static String imgSearch = 'assets/images/img_search.svg';
+
+  static String imgLocation = 'assets/images/img_location.svg';
+
+  static String imgCalendar = 'assets/images/img_calendar.svg';
+
+  static String imgGroup7Black900 = 'assets/images/img_group7_black_900.png';
+
+  static String imgGroup7 = 'assets/images/img_group7.svg';
+
+  static String imgHome = 'assets/images/img_home.svg';
+
 }

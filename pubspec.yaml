@@ -1,28 +1,34 @@
 name: hiw
 description: A new Flutter project.
 version: 1.0.0+1
-environment: 
+environment:
   sdk: '>=2.12.0 <3.0.0'
-dependencies: 
-  flutter: 
-    sdk: flutter
-  get: ^4.6.5
-  connectivity_plus: ^2.3.6
-  shared_preferences: ^2.0.15
+dependencies:
   cached_network_image: ^3.2.1
-  flutter_svg: ^1.1.6
-  intl: ^0.17.0
-dev_dependencies: 
-  flutter_test: 
+  connectivity_plus: ^2.3.6
+  firebase_auth: ^4.2.10
+  firebase_core: ^2.7.1
+  firebase_database: ^10.0.15
+  flutter:
     sdk: flutter
-flutter: 
+  flutter_svg: ^1.1.6
+  fluttertoast: ^8.2.1
+  get: ^4.6.5
+  google_maps_flutter: ^2.2.5
+  intl: ^0.17.0
+  shared_preferences: ^2.0.15
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - assets/
     - assets/images/
-  fonts: 
+  fonts:
     - family: Poppins
-      fonts: 
+      fonts:
         - asset: assets/fonts/PoppinsSemiBold.ttf
           weight: 600
         - asset: assets/fonts/PoppinsExtraBold.ttf

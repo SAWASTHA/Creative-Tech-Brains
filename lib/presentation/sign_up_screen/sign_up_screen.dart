@@ -5,10 +5,41 @@ import 'package:hiw/widgets/app_bar/appbar_image.dart';
 import 'package:hiw/widgets/app_bar/custom_app_bar.dart';
 import 'package:hiw/widgets/custom_button.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:hiw/firebase_options.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+DatabaseReference ref = FirebaseDatabase.instance.ref();
+
 class SignUpScreen extends GetWidget<SignUpController> {
+  Createuser() async {
+    try {
+      var user = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: c2.text, password: c3.text);
+      add() async {
+        DatabaseReference db = FirebaseDatabase.instance.ref("student/125");
+        await db.set({"name": c1.text, "email": c2.text, "password": c3.text});
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "weak-password") {
+        Fluttertoast.showToast(msg: "password is weak");
+      } else if (e.code == "email-already-in-use") {
+        Fluttertoast.showToast(msg: "email already exists");
+      }
+    }
+  }
+
+  TextEditingController c1 = new TextEditingController();
+  TextEditingController c2 = new TextEditingController();
+  TextEditingController c3 = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+        top: false,
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: ColorConstant.blueA700,
@@ -112,6 +143,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                 height: getVerticalSize(60),
                                                 width: getHorizontalSize(359),
                                                 child: TextField(
+                                                  controller: c1,
                                                   textAlign: TextAlign.left,
                                                   textAlignVertical:
                                                       TextAlignVertical.top,
@@ -146,6 +178,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                 height: getVerticalSize(60),
                                                 width: getHorizontalSize(359),
                                                 child: TextField(
+                                                  controller: c2,
                                                   textAlign: TextAlign.left,
                                                   textAlignVertical:
                                                       TextAlignVertical.top,
@@ -181,6 +214,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                 height: getVerticalSize(60),
                                                 width: getHorizontalSize(359),
                                                 child: TextField(
+                                                  controller: c3,
                                                   textAlign: TextAlign.left,
                                                   textAlignVertical:
                                                       TextAlignVertical.top,
@@ -227,8 +261,9 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                               BorderRadiusStyle
                                                                   .txtRoundedBorder17),
                                                   child: InkWell(
-                                                      onTap:
-                                                          () {}, // Handle your callback
+                                                      onTap: () {
+                                                        Createuser();
+                                                      }, // Handle your callback
                                                       child: Text(
                                                         "lbl_sign_up".tr,
                                                         overflow: TextOverflow
