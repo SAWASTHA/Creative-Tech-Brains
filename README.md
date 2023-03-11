@@ -1,16 +1,11 @@
-# hiw
 
-A new Flutter project.
+## [Health Is Wealth (HIW)](https://github.com/SAWASTHA/Creative-Tech-Brains)
 
-## Getting Started
+## Problem Statement :-
+A mobile application for determining a Specialized Hospital nearest to Patient's location and to recognize the availability of various resources.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Team Members:-<br>
+1.[Rohit Waghmare (Member)](https://github.com/Rohitwaghmare7)<br>
+2.[Rafat Naaz(Leader)](https://github.com/RafatNaaz25)<br>
+3.[Sakshi Munde(Member)](https://github.com/sakshimunde18)<br>
+4.[Akshaya Kolhe(Member)](https://github.com/AkshayaKolhe)<br>
