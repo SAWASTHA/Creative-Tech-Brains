@@ -15,6 +15,16 @@ import 'package:hiw/presentation/sign_up_screen/binding/sign_up_binding.dart';
 import 'package:hiw/presentation/app_navigation_screen/app_navigation_screen.dart';
 import 'package:hiw/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
 import 'package:get/get.dart';
+import 'package:hiw/presentation/Homescreen/home_screen.dart';
+import 'package:hiw/presentation/calinderscreen/calander_screen.dart';
+import 'package:hiw/presentation/mapscreen/maps_screen.dart';
+import 'package:hiw/presentation/profilescreen/profile_screen.dart';
+import 'package:hiw/presentation/searchscreen/search_screen.dart';
+import 'package:hiw/presentation/searchscreen/binding/startupscreen_binding.dart';
+import 'package:hiw/presentation/profilescreen/binding/profilebinding.dart';
+import 'package:hiw/presentation/mapscreen/binding/mapbinding.dart';
+import 'package:hiw/presentation/Homescreen/binding/homebinding.dart';
+import 'package:hiw/presentation/calinderscreen/binding/calinderbinding.dart';
 
 class AppRoutes {
   static const String startupscreenScreen = '/startupscreen_screen';
@@ -32,6 +42,12 @@ class AppRoutes {
   static const String signUpScreen = '/sign_up_screen';
 
   static const String appNavigationScreen = '/app_navigation_screen';
+
+  static const String searchScreen = '/search_screen';
+  static const String calanderScreen = '/calander_screen';
+  static const String profileScreen = '/profile_screen';
+  static const String mapsScreen = '/maps_screen';
+  static const String homeScreen = '/home_screen';
 
   static String initialRoute = '/initialRoute';
 
@@ -97,6 +113,43 @@ class AppRoutes {
       page: () => StartupscreenScreen(),
       bindings: [
         StartupscreenBinding(),
+      ],
+    ),
+    GetPage(
+      name: searchScreen,
+      page: () => search(),
+      bindings: [
+        searchBinding(),
+      ],
+    )
+    ,
+    GetPage(
+      name: profileScreen,
+      page: () => profile(),
+      bindings: [
+        profileBinding(),
+      ],
+    ),
+    GetPage(
+      name: mapsScreen,
+      page: () => Mapp(),
+      bindings: [
+        mapBinding(),
+      ],
+    ),
+     GetPage(
+      name: homeScreen,
+      page: () => Home(),
+      bindings: [
+        homeBinding(),
+      ],
+    )
+    ,
+     GetPage(
+      name: calanderScreen,
+      page: () => calander(),
+      bindings: [
+        calinderBinding(),
       ],
     )
   ];

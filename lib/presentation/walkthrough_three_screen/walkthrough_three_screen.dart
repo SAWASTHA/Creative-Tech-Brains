@@ -33,10 +33,10 @@ class WalkthroughThreeScreen extends GetWidget<WalkthroughThreeController> {
                         CustomImageView(
                           imagePath: ImageConstant.imgImage3,
                           height: getVerticalSize(
-                            297,
+                            270,
                           ),
                           width: getHorizontalSize(
-                            356,
+                            315,
                           ),
                           alignment: Alignment.center,
                         ),

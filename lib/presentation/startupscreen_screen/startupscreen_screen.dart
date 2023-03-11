@@ -7,7 +7,7 @@ class StartupscreenScreen extends GetWidget<StartupscreenController> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            backgroundColor: ColorConstant.black900,
+            backgroundColor: Colors.white,
             body: Container(
                 width: double.maxFinite,
                 child: Column(
@@ -17,7 +17,7 @@ class StartupscreenScreen extends GetWidget<StartupscreenController> {
                           imagePath: ImageConstant.imgScreenshot20230306,
                           height: getVerticalSize(288),
                           width: getHorizontalSize(314),
-                          margin: getMargin(bottom: 5))
+                          margin: getMargin(bottom: 30))
                     ]))));
   }
 }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "885638925797",
+    "firebase_url": "https://health-is-wealth-9ddc1-default-rtdb.firebaseio.com",
+    "project_id": "health-is-wealth-9ddc1",
+    "storage_bucket": "health-is-wealth-9ddc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885638925797:android:4d4275060c26fb10b9b30c",
+        "android_client_info": {
+          "package_name": "com.example.hiw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885638925797-s2d9v1l6485tpa3hg1lh269u6qf2fl13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMpzN7dRrV-CYYq6cGT3c-KKtD0FSVlQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885638925797-s2d9v1l6485tpa3hg1lh269u6qf2fl13.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -28,20 +28,20 @@ class WalkthroughTwoScreen extends GetWidget<WalkthroughTwoController> {
                         CustomImageView(
                           imagePath: ImageConstant.imgEllipse1615x428,
                           height: getVerticalSize(
-                            627,
+                            617,
                           ),
                           width: getHorizontalSize(
-                            428,
+                            418,
                           ),
                           alignment: Alignment.center,
                         ),
                         CustomImageView(
                           imagePath: ImageConstant.imgImage2,
                           height: getVerticalSize(
-                            332,
+                            312,
                           ),
                           width: getHorizontalSize(
-                            388,
+                            368,
                           ),
                           alignment: Alignment.center,
                         ),
