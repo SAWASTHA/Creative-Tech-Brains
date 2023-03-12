@@ -18,11 +18,12 @@ class SignUpScreen extends GetWidget<SignUpController> {
   Createuser() async {
     try {
       var user = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: c2.text, password: c3.text);
-      add() async {
-        DatabaseReference db = FirebaseDatabase.instance.ref("student/125");
-        await db.set({"name": c1.text, "email": c2.text, "password": c3.text});
-      }
+          .createUserWithEmailAndPassword(email: c2.text, password: c3.text)
+          .then((value) => {onTapImgHome()});
+      // add() async {
+      //   DatabaseReference db = FirebaseDatabase.instance.ref("student/125");
+      //   await db.set({"name": c1.text, "email": c2.text, "password": c3.text});
+      // }
     } on FirebaseAuthException catch (e) {
       if (e.code == "weak-password") {
         Fluttertoast.showToast(msg: "password is weak");
@@ -146,11 +147,14 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                   controller: c1,
                                                   textAlign: TextAlign.left,
                                                   textAlignVertical:
-                                                      TextAlignVertical.top,
+                                                      TextAlignVertical.bottom,
                                                   style: AppStyle
                                                       .txtRobotoRegular20,
                                                   textInputAction: null,
                                                   decoration: InputDecoration(
+                                                    hintText: "Enter Name",
+                                                    hintStyle: AppStyle
+                                                        .txtRobotoRegular20,
                                                     filled: true,
                                                     fillColor: Colors.white,
                                                     prefixIcon: Container(
@@ -181,12 +185,15 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                   controller: c2,
                                                   textAlign: TextAlign.left,
                                                   textAlignVertical:
-                                                      TextAlignVertical.top,
+                                                      TextAlignVertical.bottom,
                                                   style: AppStyle
                                                       .txtRobotoRegular20,
                                                   // focusNode: FocusNode(),
                                                   textInputAction: null,
                                                   decoration: InputDecoration(
+                                                    hintText: "Enter Email",
+                                                    hintStyle: AppStyle
+                                                        .txtRobotoRegular20,
                                                     filled: true,
                                                     fillColor: Colors.white,
                                                     prefixIcon: Container(
@@ -217,11 +224,14 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                   controller: c3,
                                                   textAlign: TextAlign.left,
                                                   textAlignVertical:
-                                                      TextAlignVertical.top,
+                                                      TextAlignVertical.bottom,
                                                   style: AppStyle
                                                       .txtRobotoRegular20,
                                                   textInputAction: null,
                                                   decoration: InputDecoration(
+                                                    hintText: "Enter Password",
+                                                    hintStyle: AppStyle
+                                                        .txtRobotoRegular20,
                                                     filled: true,
                                                     fillColor: Colors.white,
                                                     prefixIcon: Container(
@@ -283,5 +293,9 @@ class SignUpScreen extends GetWidget<SignUpController> {
 
   onTapArrowleft1() {
     Get.back();
+  }
+
+  onTapImgHome() {
+    Get.toNamed(AppRoutes.homeScreen);
   }
 }

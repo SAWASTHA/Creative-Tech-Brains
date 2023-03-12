@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hiw/core/app_export.dart';
 
@@ -18,6 +19,13 @@ class _profileState extends State<profile> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            FirebaseAuth.instance
+                                .signOut()
+                                .then((value) => onTapLogin());
+                          },
+                          child: Text("logout")),
                       Spacer(),
                       Container(
                           height: getVerticalSize(208),
@@ -106,5 +114,9 @@ class _profileState extends State<profile> {
 
   onTapImgCalendar() {
     Get.toNamed(AppRoutes.calanderScreen);
+  }
+
+  onTapLogin() {
+    Get.toNamed(AppRoutes.loginScreen);
   }
 }
