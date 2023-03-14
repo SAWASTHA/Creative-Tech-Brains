@@ -58,4 +58,9 @@ class ImageConstant {
 
   static String imgHome = 'assets/images/img_home.svg';
 
+  static String imgArrowleft2 = 'assets/images/image_arroeleft2.svg';
+
+  static String imgEdit = 'assets/images/imgedit.svg';
+
+  static String imgVolume = 'assets/images/imgvolume.svg';
 }

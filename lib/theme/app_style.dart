@@ -82,4 +82,45 @@ class AppStyle {
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w800,
   );
+  static TextStyle txtPoppinsExtraBold37 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: getFontSize(
+      37,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+  );
+
+  static TextStyle txtPoppinsMedium16 = TextStyle(
+    color: Colors.blue,
+    fontSize: getFontSize(
+      16,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+  );
+  static TextStyle txtPoppinsBold18 = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: getFontSize(
+      18,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+  );
+  static TextStyle txtPoppinsBold25 = TextStyle(
+    color: Colors.blue,
+    fontSize: getFontSize(
+      30,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+  );
+   static TextStyle txtPoppinsBold25RedA700 = TextStyle(
+    color: Colors.red,
+    fontSize: getFontSize(
+      30,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+  );
 }

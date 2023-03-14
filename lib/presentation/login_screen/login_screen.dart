@@ -135,7 +135,6 @@ class _nameState extends State<LoginScreen> {
                                                       Container(
                                                         margin: getMargin(
                                                             bottom: 10,
-                                                            left: 25,
                                                             top: 10),
                                                         height:
                                                             getVerticalSize(60),
@@ -184,7 +183,6 @@ class _nameState extends State<LoginScreen> {
                                                       Container(
                                                         margin: getMargin(
                                                             bottom: 10,
-                                                            left: 25,
                                                             top: 20),
                                                         height:
                                                             getVerticalSize(60),
@@ -236,7 +234,6 @@ class _nameState extends State<LoginScreen> {
                                                                   359),
                                                           margin: getMargin(
                                                               bottom: 5,
-                                                              left: 25,
                                                               top: 20),
                                                           padding: getPadding(
                                                               left: 0,

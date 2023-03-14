@@ -11,7 +11,9 @@ class calander extends StatefulWidget {
 class _calanderState extends State<calander> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return WillPopScope(
+        onWillPop: () async => false,
+        child: SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.black900,
             body: Container(
@@ -93,7 +95,7 @@ class _calanderState extends State<calander> {
                                   onTapImgUser();
                                 })
                           ]))
-                    ]))));
+                    ])))));
   }
 
   onTapImgHome() {

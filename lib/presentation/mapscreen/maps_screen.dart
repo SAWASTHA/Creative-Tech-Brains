@@ -11,7 +11,9 @@ class Mapp extends StatefulWidget {
 class _MappState extends State<Mapp> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return WillPopScope(
+        onWillPop: () async => false,
+        child: SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.black900,
             body: Container(
@@ -97,7 +99,7 @@ class _MappState extends State<Mapp> {
                                               })
                                         ]))),
                           ]))
-                    ]))));
+                    ])))));
   }
 
   onTapImgHome() {
