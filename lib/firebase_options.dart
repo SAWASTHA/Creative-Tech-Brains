@@ -16,16 +16,11 @@ import 'package:flutter/foundation.dart'
 /// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
-    if (kIsWeb) {
-      return web;
-    }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
         return ios;
-      case TargetPlatform.macOS:
-        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,17 +38,6 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyArpC6Rpy59fduuUIouMy9kogjxwV5h3tc',
-    appId: '1:885638925797:web:c14a638daec185c2b9b30c',
-    messagingSenderId: '885638925797',
-    projectId: 'health-is-wealth-9ddc1',
-    authDomain: 'health-is-wealth-9ddc1.firebaseapp.com',
-    databaseURL: 'https://health-is-wealth-9ddc1-default-rtdb.firebaseio.com',
-    storageBucket: 'health-is-wealth-9ddc1.appspot.com',
-    measurementId: 'G-ZB0SPKBPFB',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAMpzN7dRrV-CYYq6cGT3c-KKtD0FSVlQ4',
     appId: '1:885638925797:android:4d4275060c26fb10b9b30c',
@@ -70,28 +54,8 @@ class DefaultFirebaseOptions {
     projectId: 'health-is-wealth-9ddc1',
     databaseURL: 'https://health-is-wealth-9ddc1-default-rtdb.firebaseio.com',
     storageBucket: 'health-is-wealth-9ddc1.appspot.com',
-    iosClientId: '885638925797-t5lsbcjo2tqsq6c4elpo98irrov6m926.apps.googleusercontent.com',
-    iosBundleId: 'com.example.hiw',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD16guZkWuBPb0wjuG8XzndtQD173y0HOc',
-    appId: '1:885638925797:ios:99d9640556299831b9b30c',
-    messagingSenderId: '885638925797',
-    projectId: 'health-is-wealth-9ddc1',
-    databaseURL: 'https://health-is-wealth-9ddc1-default-rtdb.firebaseio.com',
-    storageBucket: 'health-is-wealth-9ddc1.appspot.com',
-    iosClientId: '885638925797-t5lsbcjo2tqsq6c4elpo98irrov6m926.apps.googleusercontent.com',
+    iosClientId:
+        '885638925797-t5lsbcjo2tqsq6c4elpo98irrov6m926.apps.googleusercontent.com',
     iosBundleId: 'com.example.hiw',
   );
 }
-
-
-// import 'package:firebase_core/firebase_core.dart';
-// import 'firebase_options.dart';
-
-// // ...
-
-// await Firebase.initializeApp(
-//     options: DefaultFirebaseOptions.currentPlatform,
-// );

@@ -6,7 +6,9 @@ environment:
 dependencies:
   cached_network_image: ^3.2.1
   connectivity_plus: ^2.3.6
+  double_back_to_close_app: ^2.1.0
   firebase_auth: ^4.2.10
+  cloud_firestore: ^4.4.5
   firebase_core: ^2.7.1
   firebase_database: ^10.0.15
   flutter:
@@ -14,11 +16,10 @@ dependencies:
   flutter_svg: ^1.1.6
   fluttertoast: ^8.2.1
   get: ^4.6.5
-  google_maps_flutter: ^2.2.5
   intl: ^0.17.0
   shared_preferences: ^2.0.15
-  double_back_to_close_app: ^2.1.0
-
+  latlng: ^0.2.1
+  dob_input_field: ^1.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

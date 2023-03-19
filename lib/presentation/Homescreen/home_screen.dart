@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hiw/core/app_export.dart';
@@ -5,6 +8,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hiw/firebase_options.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+import '../userinfo.dart';
 
 DatabaseReference ref = FirebaseDatabase.instance.ref();
 
@@ -13,8 +19,23 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
+class UserModel {}
+
 class _HomeState extends State<Home> {
   String? name;
+
+  DateTime? currentBackPressTime;
+
+  Future<bool> onWillPop() {
+    DateTime now = DateTime.now();
+    if (currentBackPressTime == null ||
+        now.difference(currentBackPressTime!) > Duration(seconds: 2)) {
+      currentBackPressTime = now;
+      Fluttertoast.showToast(msg: "Back again to close the app");
+      return Future.value(false);
+    }
+    return Future.value(exit(0));
+  }
 
   @override
   void initState() {
@@ -27,19 +48,32 @@ class _HomeState extends State<Home> {
     } catch (e) {}
   }
 
+  final db = FirebaseFirestore.instance;
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: onWillPop,
         child: SafeArea(
             child: Scaffold(
-                backgroundColor: ColorConstant.black900,
+                backgroundColor: ColorConstant.whiteA700,
                 body: Container(
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
                     child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
+                          Expanded(child: FutureBuilder(
+                            builder: (context, snapshot) {
+                              return ListView.builder(
+                                itemBuilder: (context, index) {
+                                  return ListTile(
+                                    title: Text(""),
+                                  );
+                                },
+                              );
+                            },
+                          )),
                           ElevatedButton(
                               onPressed: () {}, child: Text("$name")),
                           Spacer(),

@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hiw/core/app_export.dart';
 
 class profile extends StatefulWidget {
@@ -8,10 +11,23 @@ class profile extends StatefulWidget {
 }
 
 class _profileState extends State<profile> {
+  DateTime? currentBackPressTime;
+
+  Future<bool> onWillPop() {
+    DateTime now = DateTime.now();
+    if (currentBackPressTime == null ||
+        now.difference(currentBackPressTime!) > Duration(seconds: 2)) {
+      currentBackPressTime = now;
+      Fluttertoast.showToast(msg: "Back again to close the app");
+      return Future.value(false);
+    }
+    return Future.value(exit(0));
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: onWillPop,
         child: SafeArea(
             top: false,
             child: Scaffold(
@@ -22,13 +38,6 @@ class _profileState extends State<profile> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // ElevatedButton(
-                          //     onPressed: () {
-                          //       FirebaseAuth.instance
-                          //           .signOut()
-                          //           .then((value) => onTapLogin());
-                          //     },
-                          //     child: Text("logout")),
                           Container(
                               width: double.maxFinite,
                               child: Container(
@@ -76,12 +85,12 @@ class _profileState extends State<profile> {
                                                       height:
                                                           getVerticalSize(110),
                                                       width: getHorizontalSize(
-                                                          129),
+                                                          110),
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius.circular(
                                                                   getHorizontalSize(
-                                                                      14)),
+                                                                      100)),
                                                           border: Border.all(
                                                               color:
                                                                   ColorConstant
@@ -106,7 +115,6 @@ class _profileState extends State<profile> {
                                                               .txtPoppinsExtraBold37))
                                                 ]))
                                       ]))),
-
                           Container(
                             alignment: Alignment.centerLeft,
                             child: Column(
@@ -114,92 +122,179 @@ class _profileState extends State<profile> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                    padding: getPadding(left: 29, top: 43),
-                                    child: Text("Email Address".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtPoppinsMedium16)),
+                                    padding: getPadding(left: 29, top: 10),
+                                    child: Row(children: [
+                                      CustomImageView(
+                                          svgPath: ImageConstant.imgMaill,
+                                          height: getSize(25),
+                                          width: getSize(25),
+                                          margin: getMargin(top: 35)),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                              padding:
+                                                  getPadding(left: 29, top: 43),
+                                              child: Text("Email Address".tr,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.left,
+                                                  style: AppStyle
+                                                      .txtPoppinsMedium16)),
+                                          Padding(
+                                              padding:
+                                                  getPadding(left: 29, top: 6),
+                                              child: Text(
+                                                "rohit98waghmare@gmail.com".tr,
+                                                overflow: TextOverflow.ellipsis,
+                                                textAlign: TextAlign.left,
+                                                style:
+                                                    AppStyle.txtPoppinsBold18,
+                                              )),
+                                        ],
+                                      ),
+                                    ])),
                                 Padding(
-                                    padding: getPadding(left: 29, top: 6),
-                                    child: Text(
-                                      "rohit98waghmare@gmail.com".tr,
-                                      overflow: TextOverflow.ellipsis,
-                                      textAlign: TextAlign.left,
-                                      style: AppStyle.txtPoppinsBold18,
-                                    )),
+                                    padding: getPadding(left: 29, top: 10),
+                                    child: Row(children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                          top: 15,
+                                        ),
+                                        child: Icon(Icons.phone_android_sharp),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                              padding:
+                                                  getPadding(left: 29, top: 20),
+                                              child: Text("phone number".tr,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.left,
+                                                  style: AppStyle
+                                                      .txtPoppinsMedium16)),
+                                          Padding(
+                                              padding:
+                                                  getPadding(left: 30, top: 6),
+                                              child: Text("9146585763".tr,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.left,
+                                                  style: AppStyle
+                                                      .txtPoppinsBold18)),
+                                        ],
+                                      ),
+                                    ])),
                                 Padding(
-                                    padding: getPadding(left: 29, top: 20),
-                                    child: Text("phone number".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtPoppinsMedium16)),
+                                    padding: getPadding(left: 29, top: 10),
+                                    child: Row(children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(top: 15),
+                                        child: Icon(Icons.location_city),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                              padding:
+                                                  getPadding(left: 29, top: 20),
+                                              child: Text("Address".tr,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.left,
+                                                  style: AppStyle
+                                                      .txtPoppinsMedium16)),
+                                          Padding(
+                                              padding: getPadding(),
+                                              child: Container(
+                                                width: getHorizontalSize(312),
+                                                margin:
+                                                    getMargin(left: 30, top: 6),
+                                                child: SingleChildScrollView(
+                                                    scrollDirection:
+                                                        Axis.horizontal,
+                                                    child: Text(
+                                                        "Sangram nagar, satara Parisar, Aurangabad"
+                                                            .tr,
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: AppStyle
+                                                            .txtPoppinsBold18)),
+                                              ))
+                                        ],
+                                      ),
+                                    ])),
                                 Padding(
-                                    padding: getPadding(left: 30, top: 6),
-                                    child: Text("9146585763".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtPoppinsBold18)),
+                                    padding: getPadding(left: 30, top: 40),
+                                    child: Row(children: [
+                                      CustomImageView(
+                                        svgPath: ImageConstant.imgEdit,
+                                        height: getSize(20),
+                                        width: getSize(20),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                              padding: getPadding(left: 38),
+                                              child: Text("Edit profile".tr,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.left,
+                                                  style: AppStyle
+                                                      .txtPoppinsMedium16))
+                                        ],
+                                      ),
+                                    ])),
                                 Padding(
-                                    padding: getPadding(left: 29, top: 20),
-                                    child: Text("Address".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtPoppinsMedium16)),
-                                Container(
-                                  width: getHorizontalSize(312),
-                                  margin: getMargin(left: 30, top: 6),
-                                  child: SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Text(
-                                          "Sangram nagar, satara Parisar, Aurangabad"
-                                              .tr,
-                                          textAlign: TextAlign.left,
-                                          style: AppStyle.txtPoppinsBold18)),
-                                )
+                                    padding: getPadding(left: 30, top: 30),
+                                    child: Row(children: [
+                                      CustomImageView(
+                                          svgPath: ImageConstant.imgVolume,
+                                          height: getVerticalSize(20),
+                                          width: getHorizontalSize(20),
+                                          margin: getMargin(top: 5)),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                              padding: getPadding(left: 37),
+                                              child: InkWell(
+                                                  onTap: () {
+                                                    FirebaseAuth.instance
+                                                        .signOut()
+                                                        .then((value) =>
+                                                            onTapLogin());
+                                                  },
+                                                  child: Text("Sign Out".tr,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      textAlign: TextAlign.left,
+                                                      style: AppStyle
+                                                          .txtPoppinsBold25RedA7000)))
+                                        ],
+                                      ),
+                                    ])),
                               ],
                             ),
                           ),
-                          Padding(
-                              padding: getPadding(left: 29, top: 10),
-                              child: Row(children: [
-                                CustomImageView(
-                                    svgPath: ImageConstant.imgEdit,
-                                    height: getSize(25),
-                                    width: getSize(25),
-                                    margin: getMargin(top: 8, bottom: 4)),
-                                Padding(
-                                    padding: getPadding(left: 23),
-                                    child: Text("Edit profile".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtPoppinsBold25))
-                              ])),
-                          Padding(
-                              padding: getPadding(left: 29, top: 1),
-                              child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    CustomImageView(
-                                        svgPath: ImageConstant.imgVolume,
-                                        height: getVerticalSize(23),
-                                        width: getHorizontalSize(31),
-                                        margin: getMargin(top: 10)),
-                                    Padding(
-                                        padding: getPadding(left: 17),
-                                        child: InkWell(
-                                            onTap: () {
-                                              FirebaseAuth.instance
-                                                  .signOut()
-                                                  .then(
-                                                      (value) => onTapLogin());
-                                            },
-                                            child: Text("Sign Out".tr,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.left,
-                                                style: AppStyle
-                                                    .txtPoppinsBold25RedA700)))
-                                  ])),
-
                           Container(
                               height: getVerticalSize(128),
                               width: MediaQuery.of(context).size.width,

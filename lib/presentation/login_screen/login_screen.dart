@@ -1,3 +1,5 @@
+import 'package:hiw/presentation/forgot_Password_Screen/forgotpassword.dart';
+
 import 'controller/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:hiw/core/app_export.dart';
@@ -22,7 +24,7 @@ class _nameState extends State<LoginScreen> {
   loginuser() async {
     try {
       final credential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: c1.text, password: c2.text)
+          .signInWithEmailAndPassword(email: c1.text.trim(), password: c2.text.trim())
           .then(
         (value) {
           if (FirebaseAuth.instance.currentUser?.uid == null) {
@@ -226,6 +228,37 @@ class _nameState extends State<LoginScreen> {
                                                                     BorderRadiusStyle
                                                                         .txtRoundedBorder17),
                                                           ),
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 10),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .symmetric(
+                                                                horizontal:
+                                                                    38.0),
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            GestureDetector(
+                                                              onTap: () {
+                                                                Navigator.push(
+                                                                    context,
+                                                                    MaterialPageRoute(
+                                                                        builder:
+                                                                            (context) {
+                                                                  return forgotPass() ;
+                                                                }));
+                                                              },
+                                                              child: Text(
+                                                                "Forgot Password.?",
+                                                                style: AppStyle
+                                                                    .txtPoppinsSemiBold18,
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                       Container(
