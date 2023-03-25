@@ -1,6 +1,5 @@
 import 'package:hiw/presentation/forgot_Password_Screen/forgotpassword.dart';
 
-import 'controller/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:hiw/core/app_export.dart';
 import 'package:hiw/widgets/app_bar/appbar_image.dart';
@@ -24,7 +23,8 @@ class _nameState extends State<LoginScreen> {
   loginuser() async {
     try {
       final credential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: c1.text.trim(), password: c2.text.trim())
+          .signInWithEmailAndPassword(
+              email: c1.text.trim(), password: c2.text.trim())
           .then(
         (value) {
           if (FirebaseAuth.instance.currentUser?.uid == null) {
@@ -249,7 +249,7 @@ class _nameState extends State<LoginScreen> {
                                                                     MaterialPageRoute(
                                                                         builder:
                                                                             (context) {
-                                                                  return forgotPass() ;
+                                                                  return forgotPass();
                                                                 }));
                                                               },
                                                               child: Text(

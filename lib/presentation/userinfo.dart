@@ -1,23 +1,32 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-// class GetUserInfo extends StatelessWidget {
-//   final String documentID;
+class UserModel {
+  final String? id;
+  final String? name;
+  final String? email;
+  final String? number;
+  final String? Address;
 
-//   GetUserInfo({required this.documentID});
+  const UserModel(
+      {this.id,
+      required this.email,
+      required this.name,
+      required this.number,
+      required this.Address});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     CollectionReference user = FirebaseFirestore.instance.collection('users');
-//     return FutureBuilder(
-//       future: user.doc(documentID).get(),
-//       builder: (context, snapshot) {
-//         if (snapshot.connectionState == ConnectionState.done) {
-//           Map<String, dynamic> data = snapshot.data!.data() as Map<String, dynamic>;
-//           return Text("Name : ${data["Name"]}");
-//         }
-//         return Text("Loading ...");
-//       },
-//     );
-//   }
-// }
+  toJson() {
+    return {"Name": name, "Email": email, "Address": Address,"Number":number};
+  }
+
+  factory UserModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    final data = document.data()!;
+    return UserModel(
+      id: document.id,
+      email: data["Email"],
+      name: data["Name"],
+      number: data["Number"],
+      Address: data["Address"],
+    );
+  }
+}
