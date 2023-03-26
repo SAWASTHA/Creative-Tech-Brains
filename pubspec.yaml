@@ -20,6 +20,10 @@ dependencies:
   shared_preferences: ^2.0.15
   latlng: ^0.2.1
   dob_input_field: ^1.0.0
+  flutter_map: ^3.1.0
+  syncfusion_flutter_maps: ^21.1.35
+  geolocator: ^9.0.2
+  geocoding: ^2.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

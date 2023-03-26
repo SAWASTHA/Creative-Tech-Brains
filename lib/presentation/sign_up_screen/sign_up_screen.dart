@@ -42,11 +42,6 @@ class _nameState extends State<SignUpScreen> {
           a.trim(),
         );
       }
-
-      // add() async {
-      //   DatabaseReference db = FirebaseDatabase.instance.ref("student/125");
-      //   await db.set({"name": c1.text, "email": c2.text, "password": c3.text});
-      // }
     } on FirebaseAuthException catch (e) {
       if (e.code == "weak-password") {
         Fluttertoast.showToast(msg: "password is weak");
