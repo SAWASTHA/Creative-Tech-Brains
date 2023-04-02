@@ -147,4 +147,21 @@ class AppStyle {
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w800,
   );
+
+  static TextStyle date = TextStyle(
+    color: Colors.white,
+    fontSize: getFontSize(
+      29,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+  );
+  static TextStyle Select = TextStyle(
+    color: Colors.white,
+    fontSize: getFontSize(
+      27,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+  );
 }

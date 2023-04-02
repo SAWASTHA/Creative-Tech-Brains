@@ -5,25 +5,27 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 dependencies:
   cached_network_image: ^3.2.1
+  cloud_firestore: ^4.4.5
   connectivity_plus: ^2.3.6
+  dob_input_field: ^1.0.0
   double_back_to_close_app: ^2.1.0
   firebase_auth: ^4.2.10
-  cloud_firestore: ^4.4.5
   firebase_core: ^2.7.1
   firebase_database: ^10.0.15
+  firebase_storage: ^11.1.0
   flutter:
     sdk: flutter
+  flutter_map: ^3.1.0
   flutter_svg: ^1.1.6
   fluttertoast: ^8.2.1
-  get: ^4.6.5
-  intl: ^0.17.0
-  shared_preferences: ^2.0.15
-  latlng: ^0.2.1
-  dob_input_field: ^1.0.0
-  flutter_map: ^3.1.0
-  syncfusion_flutter_maps: ^21.1.35
-  geolocator: ^9.0.2
   geocoding: ^2.1.0
+  geolocator: ^9.0.2
+  get: ^4.6.5
+  image_picker: ^0.8.7+1
+  intl: ^0.17.0
+  latlng: ^0.2.1
+  shared_preferences: ^2.0.15
+  syncfusion_flutter_maps: ^21.1.35
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -32,6 +34,7 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/rohit.jpg
   fonts:
     - family: Poppins
       fonts:

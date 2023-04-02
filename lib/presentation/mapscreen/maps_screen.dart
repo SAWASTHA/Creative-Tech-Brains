@@ -3,10 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:hiw/core/app_export.dart';
+import 'package:latlong2/latlong.dart';
 import '../Mpas/map.dart';
 
 class Mapp extends StatefulWidget {
@@ -87,6 +89,12 @@ class _MappState extends State<Mapp> {
     });
   }
 
+  final pageController = PageController();
+  var b = Colors.white;
+  var d = Colors.red;
+  int selectedIndex = 0;
+  var currentLocation = AppConstants.myLocation;
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -120,123 +128,183 @@ class _MappState extends State<Mapp> {
                       children: [
                         TileLayer(
                           urlTemplate:
-                              'https://api.mapbox.com/styles/v1/rohitwaghmare/clfo4864v003k01t68vq2sfam/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoicm9oaXR3YWdobWFyZSIsImEiOiJjbGZvMTc1Zzgwcmw0M3FwNmVvc3RiZ3MyIn0.vlpN0tuVEw4AUrg1LG8UlA',
+                              'https://api.mapbox.com/styles/v1/rohitwaghmare/clfsd2vsb004901mrrde1bawz/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoicm9oaXR3YWdobWFyZSIsImEiOiJjbGZvMTc1Zzgwcmw0M3FwNmVvc3RiZ3MyIn0.vlpN0tuVEw4AUrg1LG8UlA',
                           additionalOptions: {
                             'mapStyleId': AppConstants.mapBoxStyleId,
                             'accessToken': AppConstants.mapBoxAccessToken,
                           },
+                        ),
+                        MarkerLayer(
+                          markers: [
+                            for (int i = 0; i < mapMarkers.length; i++)
+                              Marker(
+                                height: 40,
+                                width: 40,
+                                point: mapMarkers[i].location ??
+                                    AppConstants.myLocation,
+                                builder: (_) {
+                                  return GestureDetector(
+                                      onTap: () {
+                                        pageController.animateToPage(
+                                          i,
+                                          duration:
+                                              const Duration(milliseconds: 500),
+                                          curve: Curves.easeInOut,
+                                        );
+                                        selectedIndex = i;
+                                        setState(() {});
+                                      },
+                                      child: AnimatedScale(
+                                        duration:
+                                            const Duration(milliseconds: 500),
+                                        scale: selectedIndex == i ? 1 : 0.7,
+                                        child: Icon(
+                                          Icons.location_on,
+                                          color: Colors.red,
+                                          size: 50,
+                                        ),
+                                      ));
+                                },
+                              ),
+                          ],
+                        ),
+                        MarkerLayer(
+                          markers: [
+                            Marker(
+                              height: 25,
+                              width: 25,
+                              point: LatLng(
+                                  _currentPosition?.latitude == null
+                                      ? 90.0000
+                                      : _currentPosition!.latitude,
+                                  _currentPosition?.longitude == null
+                                      ? 135.0000
+                                      : _currentPosition!.longitude),
+                              builder: (context) {
+                                return Material(
+                                  type: MaterialType.transparency,
+                                  child: Ink(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                          width: 4,
+                                          color: Color.fromARGB(
+                                              255, 255, 255, 255)),
+                                      borderRadius: BorderRadius.circular(100),
+                                      color: Colors.blue,
+                                    ),
+                                  ),
+                                );
+                              },
+                            )
+                          ],
                         )
                       ]),
                   Positioned(
-                      bottom: 20,
-                      left: 20,
+                    left: 0,
+                    right: 0,
+                    bottom: 2,
+                    height: MediaQuery.of(context).size.height * 0.3,
+                    child: PageView.builder(
+                      controller: pageController,
+                      onPageChanged: (value) {
+                        selectedIndex = value;
+                        currentLocation = mapMarkers[value].location ??
+                            AppConstants.myLocation;
+                        setState(() {});
+                      },
+                      itemCount: mapMarkers.length,
+                      itemBuilder: (_, index) {
+                        final item = mapMarkers[index];
+                        return Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            color: const Color.fromARGB(255, 30, 29, 29),
+                            child: Row(
+                              children: [
+                                const SizedBox(width: 10),
+                                Expanded(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Expanded(
+                                        child: ListView.builder(
+                                          padding: EdgeInsets.zero,
+                                          scrollDirection: Axis.horizontal,
+                                          itemCount: item.rating,
+                                          itemBuilder: (BuildContext context,
+                                              int index) {
+                                            return const Icon(
+                                              Icons.star,
+                                              color: Colors.orange,
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex: 2,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              item.title ?? '',
+                                              style: const TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
+                                            ),
+                                            const SizedBox(height: 10),
+                                            Text(
+                                              item.address ?? '',
+                                              style: const TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(width: 10),
+                                Expanded(
+                                  child: Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Icon(Icons.abc)),
+                                ),
+                                // const SizedBox(width: 10),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Positioned(
+                      bottom: 250,
+                      right: 20,
                       child: FloatingActionButton(
-                        child: Icon(Icons.location_on),
+                        child: Icon(
+                          Icons.location_on,
+                          color: _currentPosition?.latitude == null ? b : d,
+                        ),
                         backgroundColor: Color.fromARGB(255, 0, 0, 0),
                         heroTag: 1,
                         onPressed: () {
                           _getCurrentPosition();
                         },
                       )),
-                  Positioned(
-                    top: 50,
-                    right: 20,
-                    child: Text(
-                        "${_currentPosition?.latitude ?? ""},${_currentPosition?.longitude ?? ""}"),
-                  ),
                 ],
               ),
-              // bottomNavigationBar: Container(
-              //     height: getVerticalSize(80),
-              //     width: MediaQuery.of(context).size.width,
-              //     child: Stack(alignment: Alignment.topLeft, children: [
-              //       Align(
-              //           alignment: Alignment.topCenter,
-              //           child: Container(
-              //               height: getVerticalSize(82),
-              //               width: double.maxFinite,
-              //               decoration: BoxDecoration(
-              //                   color: ColorConstant.blue800,
-              //                   borderRadius: BorderRadius.circular(
-              //                       getHorizontalSize(28))))),
-              //       CustomImageView(
-              //           svgPath: ImageConstant.imgGroup7,
-              //           height: getVerticalSize(88),
-              //           width: getHorizontalSize(114),
-              //           alignment: Alignment.topLeft,
-              //           margin: getMargin(
-              //             left: 68,
-              //           )),
-              //       CustomImageView(
-              //           svgPath: ImageConstant.imgHome,
-              //           height: getSize(35),
-              //           width: getSize(35),
-              //           alignment: Alignment.centerLeft,
-              //           margin: getMargin(
-              //             left: 34,
-              //           ),
-              //           onTap: () {
-              //             onTapImgHome();
-              //           }),
-              //       Align(
-              //           alignment: Alignment.centerRight,
-              //           child: Padding(
-              //               padding: getPadding(right: 46),
-              //               child: Row(
-              //                   mainAxisAlignment: MainAxisAlignment.start,
-              //                   crossAxisAlignment: CrossAxisAlignment.start,
-              //                   mainAxisSize: MainAxisSize.min,
-              //                   children: [
-              //                     CustomImageView(
-              //                         svgPath: ImageConstant.imgLocation,
-              //                         height: getVerticalSize(34),
-              //                         width: getHorizontalSize(27),
-              //                         // alignment: Alignment.centerLeft,
-              //                         margin: getMargin(right: 55)),
-              //                     CustomImageView(
-              //                         svgPath: ImageConstant.imgSearch,
-              //                         height: getVerticalSize(32),
-              //                         width: getHorizontalSize(34),
-              //                         margin: getMargin(),
-              //                         onTap: () {
-              //                           onTapImgSearch();
-              //                         }),
-              //                     CustomImageView(
-              //                         svgPath: ImageConstant.imgCalendar,
-              //                         height: getVerticalSize(32),
-              //                         width: getHorizontalSize(34),
-              //                         margin: getMargin(left: 45),
-              //                         onTap: () {
-              //                           onTapImgCalendar();
-              //                         }),
-              //                     CustomImageView(
-              //                         svgPath: ImageConstant.imgUser,
-              //                         height: getVerticalSize(35),
-              //                         width: getHorizontalSize(30),
-              //                         margin: getMargin(
-              //                           left: 45,
-              //                         ),
-              //                         onTap: () {
-              //                           onTapImgUser();
-              //                         })
-              //                   ]))),
-              //     ])),
             )));
   }
 
   onTapImgHome() {
     Get.toNamed(AppRoutes.homeScreen);
-  }
-
-  onTapImgSearch() {
-    Get.toNamed(AppRoutes.searchScreen);
-  }
-
-  onTapImgCalendar() {
-    Get.toNamed(AppRoutes.calanderScreen);
-  }
-
-  onTapImgUser() {
-    Get.toNamed(AppRoutes.profileScreen);
   }
 }

@@ -24,7 +24,6 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-
 class _HomeState extends State<Home> {
   String? name;
 
@@ -47,7 +46,7 @@ class _HomeState extends State<Home> {
     try {
       var currentUser = FirebaseAuth.instance.currentUser;
       if (currentUser != null) {
-        name = currentUser.email;
+        name = currentUser.uid;
       }
     } catch (e) {}
   }
@@ -124,7 +123,13 @@ class _HomeState extends State<Home> {
                             );
                           },
                         )),
-                        ElevatedButton(onPressed: () {}, child: Text("$name")),
+                        ElevatedButton(
+                            onPressed: () {
+                              FirebaseAuth.instance
+                                  .signOut()
+                                  .then((value) => onTapLogin());
+                            },
+                            child: Text("$name")),
                       ])),
               bottomNavigationBar: Container(
                   height: getVerticalSize(190),

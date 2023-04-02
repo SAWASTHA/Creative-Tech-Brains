@@ -65,4 +65,8 @@ class ImageConstant {
   static String imgVolume = 'assets/images/imgvolume.svg';
 
   static String imgAlarm = "assets/images/imgAlarm.svg";
+
+  static String bemde = "assets/images/bemde.svg";
+
+   static String pimg = "assets/images/rohit.jpg";
 }

@@ -59,15 +59,26 @@ class _nameState extends State<SignUpScreen> {
     }
   }
 
+  var db = FirebaseFirestore.instance;
+
   Future addUserDetails(String name, String email, String number,
       String address, String birthday) async {
-    await FirebaseFirestore.instance.collection("users").add({
+    var userr = db.collection("users");
+    // await FirebaseFirestore.instance.collection("users").add({
+    //   "Name": name,
+    //   "Email": email,
+    //   "Number": number,
+    //   "Address": address,
+    //   "Birthday": birthday,
+    // });
+    final data1 = <String, dynamic>{
       "Name": name,
       "Email": email,
       "Number": number,
       "Address": address,
       "Birthday": birthday,
-    });
+    };
+    userr.doc(email).set(data1);
   }
 
   TextEditingController c1 = new TextEditingController();
@@ -90,7 +101,7 @@ class _nameState extends State<SignUpScreen> {
   }
 
   DateTime? d1 = DateTime.now();
-  String a = "Enter date";
+  String a = "Birthday Date";
 
   @override
   Widget build(BuildContext context) {

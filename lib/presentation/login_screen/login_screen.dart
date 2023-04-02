@@ -149,12 +149,13 @@ class _nameState extends State<LoginScreen> {
                                                               TextAlign.left,
                                                           textAlignVertical:
                                                               TextAlignVertical
-                                                                  .bottom,
+                                                                  .center,
                                                           style: AppStyle
                                                               .txtRobotoRegular20,
                                                           textInputAction: null,
                                                           decoration:
                                                               InputDecoration(
+                                                            isDense: true,
                                                             hintText:
                                                                 "Enter Email",
                                                             hintStyle: AppStyle
