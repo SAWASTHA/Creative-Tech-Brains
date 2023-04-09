@@ -6,6 +6,7 @@ class StartupscreenScreen extends GetWidget<StartupscreenController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+        top: false,
         child: Scaffold(
             backgroundColor: Colors.white,
             body: Container(

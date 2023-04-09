@@ -26,6 +26,9 @@ import 'package:hiw/presentation/mapscreen/binding/mapbinding.dart';
 import 'package:hiw/presentation/Homescreen/binding/homebinding.dart';
 import 'package:hiw/presentation/calinderscreen/binding/calinderbinding.dart';
 
+import '../presentation/EditProfile/binding/editbinding.dart';
+import '../presentation/EditProfile/editprofile.dart';
+
 class AppRoutes {
   static const String startupscreenScreen = '/startupscreen_screen';
 
@@ -48,6 +51,7 @@ class AppRoutes {
   static const String profileScreen = '/profile_screen';
   static const String mapsScreen = '/maps_screen';
   static const String homeScreen = '/home_screen';
+  static const String editprofilescreen = '/editprofile';
 
   static String initialRoute = '/initialRoute';
 
@@ -121,8 +125,7 @@ class AppRoutes {
       bindings: [
         searchBinding(),
       ],
-    )
-    ,
+    ),
     GetPage(
       name: profileScreen,
       page: () => profile(),
@@ -137,20 +140,22 @@ class AppRoutes {
         mapBinding(),
       ],
     ),
-     GetPage(
+    GetPage(
       name: homeScreen,
       page: () => Home(),
       bindings: [
         homeBinding(),
       ],
-    )
-    ,
-     GetPage(
+    ),
+    GetPage(
       name: calanderScreen,
       page: () => calander(),
       bindings: [
         calinderBinding(),
       ],
-    )
+    ),
+    GetPage(name: editprofilescreen, page: () => editprofile(), bindings: [
+      editBinding(),
+    ])
   ];
 }

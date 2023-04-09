@@ -63,4 +63,9 @@ class BorderRadiusStyle {
       17,
     ),
   );
+   static BorderRadius roundedBorder34 = BorderRadius.circular(
+    getHorizontalSize(
+      34,
+    ),
+  );
 }

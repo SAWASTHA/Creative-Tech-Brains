@@ -12,7 +12,7 @@ class WalkthroughThreeScreen extends GetWidget<WalkthroughThreeController> {
           backgroundColor: ColorConstant.indigoA400,
           body: InkWell(
             onTap: () {
-              onTapLogin();
+              onTapLos();
             }, // Handle your callback
             child: Container(
               height: MediaQuery.of(context).size.height,
@@ -119,7 +119,7 @@ class WalkthroughThreeScreen extends GetWidget<WalkthroughThreeController> {
         ));
   }
 
-  onTapLogin() {
+  onTapLos() {
     Get.toNamed(AppRoutes.losScreen);
   }
 }

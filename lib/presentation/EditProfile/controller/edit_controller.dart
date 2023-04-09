@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hiw/core/app_export.dart';
-import 'package:hiw/presentation/profilescreen/models/profileModel.dart';
+import '../models/editModel.dart';
 
-class profileController extends GetxController {
-  Rx<profileModel> searchModelObj = profileModel().obs;
+class editController extends GetxController {
+  Rx<editModel> searchModelObj = editModel().obs;
 
   @override
   void onReady() {
