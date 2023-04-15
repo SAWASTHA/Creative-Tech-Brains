@@ -9,18 +9,12 @@ To create a mobile application for determining a Specialized Hospital nearest to
 
 ## Index
 
-- [Abstract](#abstract)
+
 - [Problem Statement Introduction](#problem-statement-introduction)
+- [Abstract](#abstract)
 - [Objective](#objective)
 - [Scope And Limitations](#scope-and-limitations)
 - [About Us](#about-us)
-
-<hr>
-
-## Abstract
-
-The development of a mobile application that aims to help patients find the nearest specialized hospital based on their current location. The application also provides information on the availability of various resources such as doctors, medical equipment, bed availability and other healthcare services. The application is designed to be user-friendly and easy to navigate, with a simple and intuitive interface. The application utilizes geolocation technology and integrates with various hospital databases to provide up-to-date and accurate information to the user. 
-Patient-related data is one of the most overwhelming aspects of healthcare. The storage and retrieval of this patient data, when needed, is a challenge that the hospitals need to address. The proposed application has the potential to improve patient outcomes by enabling them to access specialized care quickly and efficiently.
 
 
 <hr>
@@ -35,6 +29,12 @@ To address this challenge, a mobile application can be developed to enable patie
 
 <hr>
 
+## Abstract
+
+The development of a mobile application that aims to help patients find the nearest specialized hospital based on their current location. The application also provides information on the availability of various resources such as doctors, medical equipment, bed availability and other healthcare services. The application is designed to be user-friendly and easy to navigate, with a simple and intuitive interface. The application utilizes geolocation technology and integrates with various hospital databases to provide up-to-date and accurate information to the user. 
+Patient-related data is one of the most overwhelming aspects of healthcare. The storage and retrieval of this patient data, when needed, is a challenge that the hospitals need to address. The proposed application has the potential to improve patient outcomes by enabling them to access specialized care quickly and efficiently.
+
+<hr>
 
 ## Objective
 
