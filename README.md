@@ -1,21 +1,42 @@
+<div id="top"></div>
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a name="readme-top"></a>
+
 
 ## [Health Is Wealth (HIW)](https://github.com/SAWASTHA/Creative-Tech-Brains)
 
-## <strong> Problem Statement</strong><br>
-
-
-To create a mobile application for determining a Specialized Hospital nearest to Patient's location and to recognize the availability of various resources.
-
-
-## Index
-
-
-- [Problem Statement Introduction](#problem-statement-introduction)
-- [Abstract](#abstract)
-- [Objective](#objective)
-- [Scope And Limitations](#scope-and-limitations)
-- [About Us](#about-us)
-
+<br />
+<div align="center">
+  <a href="https://github.com/SAWASTHA/Creative-Tech-Brains">
+    <img src="https://user-images.githubusercontent.com/92391500/232209609-2de0d41f-5607-44d6-a96a-10c60e074f04.jpg" alt="Logo" width="80" height="80">
+  </a>
+<h3 align="center">Health Is Wealth (HIW)</h3>
+  <p align="center">
+   Problem Statement <br>
+  To create a mobile application for determining a Specialized Hospital nearest to Patient's location and to recognize the availability of various resources.
+    <br />
+    <a href="https://github.com/SAWASTHA/Creative-Tech-Brains"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://github.com/SAWASTHA/Creative-Tech-Brains">View Demo</a>
+    ·
+    <a href="https://github.com/SAWASTHA/Creative-Tech-Brains/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/SAWASTHA/Creative-Tech-Brains/issues">Request Feature</a>
+  </p>
+</div>
+  <hr>
+  
+  
+<details>
+ <summary>Table of Contents</summary>
+  <ol>
+    <li> <a href="#problem-statement-introduction">Problem Statement Introduction</a> </li>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#scope-and-limitations">Scope And Limitations</a></li>
+    <li><a href="#about-us">About Us</a></li>
+  </ol>
+</details>
 
 <hr>
 
@@ -28,6 +49,7 @@ The lack of access to timely and accurate information about the availability of 
 To address this challenge, a mobile application can be developed to enable patients to locate specialized hospitals nearest to their location and determine the availability of resources in those hospitals. The application is designed to be user-friendly and easy to navigate, with a simple and intuitive interface.
 
 <hr>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Abstract
 
@@ -35,6 +57,8 @@ The development of a mobile application that aims to help patients find the near
 Patient-related data is one of the most overwhelming aspects of healthcare. The storage and retrieval of this patient data, when needed, is a challenge that the hospitals need to address. The proposed application has the potential to improve patient outcomes by enabling them to access specialized care quickly and efficiently.
 
 <hr>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Objective
 
@@ -55,6 +79,7 @@ The objectives of the mobile application for determining a specialized hospital 
 
 <hr>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Scope And Limitations
 
@@ -76,7 +101,7 @@ Limitations:
 The application is limited to patients only but in future we can expand its scope to hospitals as well. The application only provides the location of nearest hospitals. 
 
 
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <hr>
 
@@ -92,3 +117,5 @@ Welcome to our project team! We are a group of four college students who are pas
 4.[Akshaya Kolhe(Member)](https://github.com/AkshayaKolhe)<br>
 
 Together, we are a dynamic and collaborative team that believes in the power of learning, creativity, and innovation. We are excited to embark on this project and look forward to sharing our progress with you. Thank you for your support!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
