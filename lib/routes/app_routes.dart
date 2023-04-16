@@ -28,6 +28,16 @@ import 'package:hiw/presentation/calinderscreen/binding/calinderbinding.dart';
 
 import '../presentation/EditProfile/binding/editbinding.dart';
 import '../presentation/EditProfile/editprofile.dart';
+import '../presentation/doctorsappointment/binding/doctorsappointment_binding.dart';
+import '../presentation/doctorsappointment/doctorsappointmenttt.dart';
+import '../presentation/hospitalData/binding/hospitalData_binding.dart';
+import '../presentation/hospitalData/hospitalDataa.dart';
+import '../presentation/searchscreen/doctor search/binding/doctorsearchbinding.dart';
+import '../presentation/searchscreen/doctor search/doctorsearch.dart';
+import '../presentation/searchscreen/hospitalsearch/binding/hospitalsearchbinding.dart';
+import '../presentation/searchscreen/hospitalsearch/hospitalsearch.dart';
+import '../presentation/searchscreen/store search/binding/storesearchbinding.dart';
+import '../presentation/searchscreen/store search/storesearch.dart';
 
 class AppRoutes {
   static const String startupscreenScreen = '/startupscreen_screen';
@@ -52,6 +62,11 @@ class AppRoutes {
   static const String mapsScreen = '/maps_screen';
   static const String homeScreen = '/home_screen';
   static const String editprofilescreen = '/editprofile';
+  static const String hospitalDataa = '/hospitalDataa';
+  static const String hospitalsearchh = '/hospitalsearch';
+  static const String doctor = '/doctorsearch';
+  static const String store = '/storesearch';
+  static const String doctorappointmentt = '/doctorsapponitmenttt';
 
   static String initialRoute = '/initialRoute';
 
@@ -156,6 +171,43 @@ class AppRoutes {
     ),
     GetPage(name: editprofilescreen, page: () => editprofile(), bindings: [
       editBinding(),
-    ])
+    ]),
+    GetPage(
+      name: hospitalDataa,
+      page: () => hospitalData(
+        email: null,
+      ),
+      bindings: [
+        hospitalDataBinding(),
+      ],
+    ),
+    GetPage(
+      name: hospitalsearchh,
+      page: () => hospitalsearch(),
+      bindings: [
+        hospitalsearchBinding(),
+      ],
+    ),
+    GetPage(
+      name: doctor,
+      page: () => doctorsearch(),
+      bindings: [
+        doctorsearchBinding(),
+      ],
+    ),
+    GetPage(
+      name: store,
+      page: () => storesearch(),
+      bindings: [
+        storesearchBinding(),
+      ],
+    ),
+    GetPage(
+      name: doctorappointmentt,
+      page: () => Doctorsappointmenttt(dname: null,),
+      bindings: [
+        doctorsappointmentBinding(),
+      ],
+    ),
   ];
 }

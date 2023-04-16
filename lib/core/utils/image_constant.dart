@@ -68,5 +68,23 @@ class ImageConstant {
 
   static String bemde = "assets/images/bemde.svg";
 
-   static String pimg = "assets/images/rohit.jpg";
+  static String pimg = "assets/images/rohit.jpg";
+
+  static String searchbackground = "assets/images/search.svg";
+
+  static String imgImage4 = 'assets/images/img_image4.png';
+
+  static String hospital = 'assets/hospital.png';
+
+  static String imgImage6 = 'assets/images/img_image6.png';
+
+  static String doctorssearch = 'assets/images/doctorsearch.svg';
+
+  static String storesearch = 'assets/images/store.svg';
+
+  static String bookappointment = 'assets/images/bookappointment.png';
+
+  static String hospsearch = 'assets/images/hosp.svg';
+
+  static String nurse = 'assets/images/searchhosp.jpg';
 }

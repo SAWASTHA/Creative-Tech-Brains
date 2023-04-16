@@ -8,7 +8,7 @@ class AppConstants {
       'pk.eyJ1Ijoicm9oaXR3YWdobWFyZSIsImEiOiJjbGZvMTc1Zzgwcmw0M3FwNmVvc3RiZ3MyIn0.vlpN0tuVEw4AUrg1LG8UlA';
 
   static const String mapBoxStyleId =
-      'https://api.mapbox.com/styles/v1/rohitwaghmare/clfsd2vsb004901mrrde1bawz/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoicm9oaXR3YWdobWFyZSIsImEiOiJjbGZvMTc1Zzgwcmw0M3FwNmVvc3RiZ3MyIn0.vlpN0tuVEw4AUrg1LG8UlA';
+      'https://api.mapbox.com/styles/v1/rohitwaghmare/clggkd0ou003e01pc045w98os/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoicm9oaXR3YWdobWFyZSIsImEiOiJjbGZvMTc1Zzgwcmw0M3FwNmVvc3RiZ3MyIn0.vlpN0tuVEw4AUrg1LG8UlA';
 
   static var myLocation = LatLng(19.8762, 75.3433);
 }

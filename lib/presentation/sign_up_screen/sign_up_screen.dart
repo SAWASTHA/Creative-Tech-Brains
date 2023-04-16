@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
-import '../../repository/user repository/user_repository.dart';
 import '../userinfo.dart';
 import 'controller/sign_up_controller.dart';
 import 'package:flutter/material.dart';
@@ -64,19 +62,14 @@ class _nameState extends State<SignUpScreen> {
   Future addUserDetails(String name, String email, String number,
       String address, String birthday) async {
     var userr = db.collection("users");
-    // await FirebaseFirestore.instance.collection("users").add({
-    //   "Name": name,
-    //   "Email": email,
-    //   "Number": number,
-    //   "Address": address,
-    //   "Birthday": birthday,
-    // });
     final data1 = <String, dynamic>{
       "Name": name,
       "Email": email,
       "Number": number,
       "Address": address,
       "Birthday": birthday,
+      "profileURL":
+          "https://firebasestorage.googleapis.com/v0/b/health-is-wealth-9ddc1.appspot.com/o/rohit%40gmail.com%2Fimage%2Fpost_1680520197244?alt=media&token=bdfa05e6-1f19-4845-abb1-0d0610b0c56d"
     };
     userr.doc(email).set(data1);
   }
@@ -108,7 +101,7 @@ class _nameState extends State<SignUpScreen> {
     return SafeArea(
         top: false,
         child: Scaffold(
-            resizeToAvoidBottomInset: false,
+            resizeToAvoidBottomInset: true,
             backgroundColor: ColorConstant.blueA700,
             appBar: CustomAppBar(
                 height: getVerticalSize(65),

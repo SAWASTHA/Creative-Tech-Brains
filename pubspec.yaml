@@ -15,6 +15,7 @@ dependencies:
   firebase_storage: ^11.1.0
   flutter:
     sdk: flutter
+  flutter_local_notifications: ^13.0.0
   flutter_map: ^3.1.0
   flutter_svg: ^1.1.6
   fluttertoast: ^8.2.1
@@ -26,6 +27,10 @@ dependencies:
   latlng: ^0.2.1
   shared_preferences: ^2.0.15
   syncfusion_flutter_maps: ^21.1.35
+  table_calendar: ^3.0.6
+  text_scroll: ^0.2.0
+  getwidget: ^2.0.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -34,7 +39,6 @@ flutter:
   assets:
     - assets/
     - assets/images/
-    - assets/images/rohit.jpg
   fonts:
     - family: Poppins
       fonts:

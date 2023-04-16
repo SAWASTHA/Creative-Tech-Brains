@@ -20,6 +20,26 @@ class ColorConstant {
 
   static Color whiteA70051 = fromHex('#51ffffff');
 
+  static Color lightBlue900 = fromHex('#005f9c');
+
+  static Color pink300 = fromHex('#e4548f');
+
+  static Color sss = fromHex('#5a82fc');
+
+  static Color purple = fromHex('#504099');
+
+  static Color docb = fromHex('#0e8e8e');
+
+  static Color cal = fromHex('#2e2445');
+
+  static Color orange = fromHex('#fd7b3c');
+
+  static Color bluish = fromHex('#37a3a5');
+
+  static Color pinkesh = fromHex('#ff0080');
+
+  static Color withblack = fromHex('#150050');
+
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();
     if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');

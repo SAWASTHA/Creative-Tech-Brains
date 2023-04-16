@@ -43,6 +43,7 @@ class AppStyle {
     fontSize: getFontSize(
       40,
     ),
+    height: 1.2,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
   );
@@ -102,7 +103,7 @@ class AppStyle {
   static TextStyle txtPoppinsMedium16 = TextStyle(
     color: Colors.blue,
     fontSize: getFontSize(
-      16,
+      20,
     ),
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w800,
@@ -110,7 +111,7 @@ class AppStyle {
   static TextStyle txtPoppinsBold18 = TextStyle(
     color: ColorConstant.black900,
     fontSize: getFontSize(
-      18,
+      20,
     ),
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w800,
@@ -142,7 +143,7 @@ class AppStyle {
   static TextStyle txtPoppinsBold25RedA7000 = TextStyle(
     color: Colors.red,
     fontSize: getFontSize(
-      18,
+      20,
     ),
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w800,
@@ -163,5 +164,95 @@ class AppStyle {
     ),
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w800,
+  );
+  static TextStyle searchAnything = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: getFontSize(
+      32,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+  );
+  static TextStyle search = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: getFontSize(
+      40,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle hospitaldate = TextStyle(
+    color: Colors.grey,
+    fontSize: getFontSize(
+      20,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle doctors = TextStyle(
+    color: Color.fromARGB(255, 0, 0, 0),
+    fontSize: getFontSize(
+      30,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle doctorname = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: getFontSize(
+      35,
+    ),
+    height: 1.2,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle docts = TextStyle(
+    color: ColorConstant.bluegray400,
+    fontSize: getFontSize(
+      17,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w800,
+  );
+  static TextStyle doctl = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: getFontSize(
+      22,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w900,
+  );
+  static TextStyle doctc = TextStyle(
+    color: ColorConstant.bluegray400,
+    fontSize: getFontSize(
+      20,
+    ),
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle docth = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: getFontSize(
+      27,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w900,
+  );
+  static TextStyle app = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: getFontSize(
+      25,
+    ),
+    height: 1.2,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle month = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: getFontSize(
+      31,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
   );
 }

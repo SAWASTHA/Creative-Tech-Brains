@@ -3,7 +3,6 @@ import 'package:hiw/presentation/searchscreen/models/searchModel.dart';
 
 class searchController extends GetxController {
   Rx<searchModel> searchModelObj = searchModel().obs;
-
   @override
   void onReady() {
     super.onReady();
