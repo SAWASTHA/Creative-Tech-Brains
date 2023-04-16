@@ -3,14 +3,12 @@
 <a name="readme-top"></a>
 
 
-## [Health Is Wealth (HIW)](https://github.com/SAWASTHA/Creative-Tech-Brains)
-
 <br />
 <div align="center">
   <a href="https://github.com/SAWASTHA/Creative-Tech-Brains">
     <img src="https://user-images.githubusercontent.com/92391500/232209609-2de0d41f-5607-44d6-a96a-10c60e074f04.jpg" alt="Logo" width="80" height="80">
   </a>
-<h3 align="center">Health Is Wealth (HIW)</h3>
+<h3 align="center"><a href="https://github.com/SAWASTHA/Creative-Tech-Brains">Health Is Wealth (HIW)</a></h3>
   <p align="center">
    Problem Statement <br>
   To create a mobile application for determining a Specialized Hospital nearest to Patient's location and to recognize the availability of various resources.
@@ -30,7 +28,7 @@
   <hr>
   
   
-<details>
+<details align="center">
  <summary>Table of Contents</summary>
   <ol>
     <li> <a href="#problem-statement-introduction">Problem Statement Introduction</a> </li>
@@ -51,7 +49,7 @@ The lack of access to timely and accurate information about the availability of 
 
 To address this challenge, a mobile application can be developed to enable patients to locate specialized hospitals nearest to their location and determine the availability of resources in those hospitals. The application is designed to be user-friendly and easy to navigate, with a simple and intuitive interface.
 
-<hr>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Abstract
@@ -59,7 +57,6 @@ To address this challenge, a mobile application can be developed to enable patie
 The development of a mobile application that aims to help patients find the nearest specialized hospital based on their current location. The application also provides information on the availability of various resources such as doctors, medical equipment, bed availability and other healthcare services. The application is designed to be user-friendly and easy to navigate, with a simple and intuitive interface. The application utilizes geolocation technology and integrates with various hospital databases to provide up-to-date and accurate information to the user. 
 Patient-related data is one of the most overwhelming aspects of healthcare. The storage and retrieval of this patient data, when needed, is a challenge that the hospitals need to address. The proposed application has the potential to improve patient outcomes by enabling them to access specialized care quickly and efficiently.
 
-<hr>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,7 +77,6 @@ The objectives of the mobile application for determining a specialized hospital 
 6.	Search Options: The application should allow patients to search based on various criteria such as specialties, services offered, distance, ratings, and reviews.
 
 
-<hr>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,7 +102,7 @@ The application is limited to patients only but in future we can expand its scop
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<hr>
+
 
 
 ## About Us
