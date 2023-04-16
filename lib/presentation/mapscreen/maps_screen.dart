@@ -98,7 +98,7 @@ class _MappState extends State<Mapp> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-        onWillPop: onWillPop,
+        onWillPop: null,
         child: SafeArea(
             top: false,
             child: Scaffold(
@@ -112,7 +112,8 @@ class _MappState extends State<Mapp> {
                 child: Icon(
                   Icons.arrow_back_rounded,
                   size: 30,
-                  weight: 0.2,
+                  weight: 20,
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
               backgroundColor: ColorConstant.black900,
@@ -128,7 +129,7 @@ class _MappState extends State<Mapp> {
                       children: [
                         TileLayer(
                           urlTemplate:
-                              'https://api.mapbox.com/styles/v1/rohitwaghmare/clfsd2vsb004901mrrde1bawz/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoicm9oaXR3YWdobWFyZSIsImEiOiJjbGZvMTc1Zzgwcmw0M3FwNmVvc3RiZ3MyIn0.vlpN0tuVEw4AUrg1LG8UlA',
+                              'https://api.mapbox.com/styles/v1/rohitwaghmare/clggkd0ou003e01pc045w98os/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoicm9oaXR3YWdobWFyZSIsImEiOiJjbGZvMTc1Zzgwcmw0M3FwNmVvc3RiZ3MyIn0.vlpN0tuVEw4AUrg1LG8UlA',
                           additionalOptions: {
                             'mapStyleId': AppConstants.mapBoxStyleId,
                             'accessToken': AppConstants.mapBoxAccessToken,
@@ -138,6 +139,7 @@ class _MappState extends State<Mapp> {
                           markers: [
                             for (int i = 0; i < mapMarkers.length; i++)
                               Marker(
+                                rotate: true,
                                 height: 40,
                                 width: 40,
                                 point: mapMarkers[i].location ??
@@ -160,7 +162,9 @@ class _MappState extends State<Mapp> {
                                         scale: selectedIndex == i ? 1 : 0.7,
                                         child: Icon(
                                           Icons.location_on,
-                                          color: Colors.red,
+                                          color: selectedIndex == i
+                                              ? Colors.red
+                                              : Colors.blue,
                                           size: 50,
                                         ),
                                       ));
@@ -186,11 +190,10 @@ class _MappState extends State<Mapp> {
                                   child: Ink(
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                          width: 4,
-                                          color: Color.fromARGB(
-                                              255, 255, 255, 255)),
+                                          width: 2,
+                                          color: Color.fromARGB(255, 0, 0, 0)),
                                       borderRadius: BorderRadius.circular(100),
-                                      color: Colors.blue,
+                                      color: Color.fromARGB(255, 0, 140, 255),
                                     ),
                                   ),
                                 );
@@ -218,11 +221,13 @@ class _MappState extends State<Mapp> {
                         return Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Card(
-                            elevation: 5,
+                            surfaceTintColor: Colors.black,
+                            shadowColor: Colors.black,
+                            elevation: 8,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            color: const Color.fromARGB(255, 30, 29, 29),
+                            color: Color.fromARGB(255, 255, 255, 255),
                             child: Row(
                               children: [
                                 const SizedBox(width: 10),
@@ -253,16 +258,18 @@ class _MappState extends State<Mapp> {
                                             Text(
                                               item.title ?? '',
                                               style: const TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 25,
                                                   fontWeight: FontWeight.bold,
-                                                  color: Colors.white),
+                                                  color: Color.fromARGB(
+                                                      255, 0, 0, 0)),
                                             ),
                                             const SizedBox(height: 10),
                                             Text(
                                               item.address ?? '',
                                               style: const TextStyle(
                                                 fontSize: 14,
-                                                color: Colors.grey,
+                                                color: Color.fromARGB(
+                                                    255, 94, 94, 94),
                                               ),
                                             ),
                                           ],
@@ -271,13 +278,7 @@ class _MappState extends State<Mapp> {
                                     ],
                                   ),
                                 ),
-                                const SizedBox(width: 10),
-                                Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: Icon(Icons.abc)),
-                                ),
-                                // const SizedBox(width: 10),
+                                SizedBox(width: 10),
                               ],
                             ),
                           ),
@@ -292,6 +293,8 @@ class _MappState extends State<Mapp> {
                         child: Icon(
                           Icons.location_on,
                           color: _currentPosition?.latitude == null ? b : d,
+                          size: 35,
+                          grade: 20,
                         ),
                         backgroundColor: Color.fromARGB(255, 0, 0, 0),
                         heroTag: 1,
