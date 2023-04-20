@@ -146,6 +146,6 @@ Welcome to our project team! We are a group of four college students who are pas
 3.[Sakshi Munde(Member)](https://github.com/sakshimunde18)<br>
 4.[Akshaya Kolhe(Member)](https://github.com/AkshayaKolhe)<br>
 
-Together, we are a dynamic and collaborative team that believes in the power of learning, creativity, and innovation. We are excited to embark on this project and look forward to sharing our progress with you. Thank you for your support!
+Together, we are a dynamic and collaborative team that believes in the power of learning, creativity, and innovation. We are excited to embark on this project and look forward to sharing our progress with you.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
