@@ -13,9 +13,9 @@
    Problem Statement <br>
   To create a mobile application for determining a Specialized Hospital nearest to Patient's location and to recognize the availability of various resources.
     <br />
-    <a href="https://github.com/SAWASTHA/Creative-Tech-Brains"><strong>Explore the docs »</strong></a>
+    <a href="https://drive.google.com/file/d/1nCIOjKuWHBv7wZy39Ms_Qa1s_IdZ79bF/view"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/SAWASTHA/Creative-Tech-Brains">View Demo</a>
+    <a href="https://drive.google.com/file/d/1jqGxYChdbK-KWYKuod_o8_KHbbX2AH-Z/view">View Demo</a>
     ·
     <a href="https://github.com/SAWASTHA/Creative-Tech-Brains/issues">Report Bug</a>
     ·
@@ -23,9 +23,13 @@
      
   </p>
   
-   Project Link: [Creative Tech Brains](https://github.com/SAWASTHA)
+   Project Link: [Creative Tech Brains](https://github.com/SAWASTHA) <br><br>
+    [Watch the video](https://drive.google.com/file/d/1jqGxYChdbK-KWYKuod_o8_KHbbX2AH-Z/view)
 </div>
   <hr>
+  
+
+  
   
   
 <details align="center">
@@ -34,6 +38,7 @@
     <li> <a href="#problem-statement-introduction">Problem Statement Introduction</a> </li>
     <li><a href="#abstract">Abstract</a></li>
     <li><a href="#objective">Objective</a></li>
+    <li><a href="#implementation">Implementation</a></li>
     <li><a href="#scope-and-limitations">Scope And Limitations</a></li>
     <li><a href="#about-us">About Us</a></li>
   </ol>
@@ -58,6 +63,7 @@ The development of a mobile application that aims to help patients find the near
 Patient-related data is one of the most overwhelming aspects of healthcare. The storage and retrieval of this patient data, when needed, is a challenge that the hospitals need to address. The proposed application has the potential to improve patient outcomes by enabling them to access specialized care quickly and efficiently.
 
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Objective
@@ -79,6 +85,31 @@ The objectives of the mobile application for determining a specialized hospital 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Implementation
+
+
+<table>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/92391500/232313561-1ad99c85-7c00-4214-b185-e1ba4283f4d6.jpg" width=2000 height=380></td>
+    <td><img src="https://user-images.githubusercontent.com/92391500/232313574-e8e79459-fc26-4970-8fde-cc71dcf60d96.jpg" width=2000 height=380></td>
+    <td><img src="https://user-images.githubusercontent.com/92391500/232313601-1b29ad28-8aaf-4ee9-83f0-11a7dd022f71.jpg" width=2000 height=380></td>
+     <td><img src="https://user-images.githubusercontent.com/92391500/232313611-5c726232-cec2-4472-b930-f886e73ab152.jpg" width=2000 height=380></td>
+    <td><img src="https://user-images.githubusercontent.com/92391500/232313620-e5945c3b-d275-4995-8a4f-cc642ff9208a.jpg" width=2000 height=380></td>
+        <td><img src="https://user-images.githubusercontent.com/92391500/232313630-6ff4098d-d2fd-4244-a48a-cd4cc2f995c8.jpg" width=2000 height=380></td>
+  </tr>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/92391500/232313694-23b79c3c-2c54-4ab7-9697-23fb067151bd.jpg" width=2000 height=380></td>
+     <td><img src="https://user-images.githubusercontent.com/92391500/232313723-3a0a23ca-5a81-4413-af7b-4fe92ee86d38.jpg" width=2000 height=380></td>
+    <td><img src="https://user-images.githubusercontent.com/92391500/232313731-ba92d766-1857-4b4e-bdcb-933bd622b5b0.jpg" width=2000 height=380></td>
+    <td><img src="https://user-images.githubusercontent.com/92391500/232313770-0b356690-4599-4057-a660-f5f35bd90e74.jpg" width=2000 height=380></td>
+    <td><img src="https://user-images.githubusercontent.com/92391500/232313782-94ff6c60-008a-47bb-a44a-b6b3d5adb1c1.jpg" width=2000 height=380></td>
+  </tr>
+ </table>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## Scope And Limitations
 
